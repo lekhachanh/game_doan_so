@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="Check(parseInt(prompt('mời bạn nhập vào số ')))" >
+<script>
+    let soBiMat = Math.floor(Math.random()*101);
+    function Check(num) {
+        if (num===soBiMat) {
+            alert("Bạn đã đoán đúng số bí mật là "+ soBiMat);
+            return true;
+        }else if (num < soBiMat) {
+            alert("Số bạn nhập đang nhỏ hơn số bí mật");
+            num = parseInt(prompt("mời bạn nhập vào số lớn hơn " + num));
+            return Check(num);
+        }else {
+            alert("Số bạn nhập đang lớn hơn số bí mật");
+            num = parseInt(prompt("mời bạn nhập vào số nhỏ hơn " + num));
+            return Check(num);
+        }
+    }
+</script>
+</body>
+</html>
